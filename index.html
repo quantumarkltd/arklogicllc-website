@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ark Logic LLC — Software &amp; Web Development</title>
+    <meta
+      name="description"
+      content="Ark Logic LLC builds software, websites, and WordPress themes with clarity and craft."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#12161c",
+              mist: "#e8eef2",
+              fog: "#f4f7f9",
+              sea: "#1f6f78",
+              sea-dark: "#16545b",
+              line: "#c5d0d8",
+            },
+            fontFamily: {
+              display: ["Syne", "sans-serif"],
+              sans: ["Figtree", "sans-serif"],
+            },
+            keyframes: {
+              rise: {
+                "0%": { opacity: "0", transform: "translateY(18px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              drift: {
+                "0%": { transform: "scale(1)" },
+                "100%": { transform: "scale(1.06)" },
+              },
+            },
+            animation: {
+              rise: "rise 0.9s ease-out both",
+              "rise-delay": "rise 0.9s ease-out 0.15s both",
+              "rise-late": "rise 0.9s ease-out 0.3s both",
+              drift: "drift 18s ease-in-out infinite alternate",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --ink: #12161c;
+        --mist: #e8eef2;
+        --fog: #f4f7f9;
+        --sea: #1f6f78;
+        --line: #c5d0d8;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--fog);
+        background-image:
+          radial-gradient(ellipse 80% 50% at 10% -10%, rgba(31, 111, 120, 0.12), transparent 55%),
+          radial-gradient(ellipse 60% 40% at 100% 0%, rgba(18, 22, 28, 0.06), transparent 50%),
+          linear-gradient(180deg, #f4f7f9 0%, #eef3f6 100%);
+      }
+
+      .hero-panel {
+        background-image:
+          linear-gradient(115deg, rgba(18, 22, 28, 0.72) 0%, rgba(18, 22, 28, 0.35) 45%, rgba(18, 22, 28, 0.55) 100%),
+          url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .section-reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .section-reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.2rem;
+        width: 100%;
+        height: 1px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-link:focus-visible::after {
+        transform: scaleX(1);
+      }
+    </style>
+  </head>
+  <body class="font-sans text-ink antialiased">
+    <header class="absolute inset-x-0 top-0 z-20">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 md:px-8">
+        <a href="#top" class="font-display text-lg font-bold tracking-tight text-white md:text-xl">
+          Ark Logic
+        </a>
+        <nav class="hidden items-center gap-8 text-sm font-medium text-white/85 sm:flex" aria-label="Primary">
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#approach">Approach</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="relative min-h-[100svh] overflow-hidden">
+        <div class="hero-panel absolute inset-0 animate-drift origin-center" aria-hidden="true"></div>
+        <div class="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-6 pb-16 pt-28 md:px-8 md:pb-24">
+          <p class="font-display animate-rise text-4xl font-extrabold leading-none tracking-tight text-white sm:text-5xl md:text-7xl lg:text-8xl">
+            Ark Logic LLC
+          </p>
+          <h1 class="mt-6 max-w-2xl animate-rise-delay font-display text-2xl font-semibold leading-snug text-white/95 sm:text-3xl md:text-4xl">
+            Software &amp; web development, built with precision.
+          </h1>
+          <p class="mt-4 max-w-xl animate-rise-late text-base leading-relaxed text-white/80 md:text-lg">
+            We design and ship websites, applications, and WordPress themes for teams that value clarity over noise.
+          </p>
+          <div class="mt-8 flex animate-rise-late flex-wrap items-center gap-4">
+            <a
+              href="#contact"
+              class="inline-flex items-center bg-sea px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-sea-dark"
+            >
+              Start a project
+            </a>
+            <a
+              href="#services"
+              class="inline-flex items-center border border-white/40 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-white hover:bg-white/10"
+            >
+              View services
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section-reveal border-t border-line/60 px-6 py-24 md:px-8 md:py-32">
+        <div class="mx-auto max-w-6xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-sea">What we do</p>
+          <h2 class="mt-3 max-w-3xl font-display text-3xl font-bold tracking-tight text-ink md:text-5xl">
+            Two focused practices. One standard of craft.
+          </h2>
+          <div class="mt-16 grid gap-12 md:grid-cols-2 md:gap-16">
+            <article>
+              <h3 class="font-display text-2xl font-bold text-ink">Software &amp; Web Development</h3>
+              <p class="mt-4 text-base leading-relaxed text-ink/70 md:text-lg">
+                From product interfaces to custom web applications, we build reliable software with clean architecture,
+                thoughtful UX, and maintainable code.
+              </p>
+            </article>
+            <article>
+              <h3 class="font-display text-2xl font-bold text-ink">WordPress Themes</h3>
+              <p class="mt-4 text-base leading-relaxed text-ink/70 md:text-lg">
+                We create performant, editor-friendly WordPress themes—custom builds and refinements that stay flexible
+                as your content grows.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="approach" class="section-reveal bg-mist/70 px-6 py-24 md:px-8 md:py-32">
+        <div class="mx-auto grid max-w-6xl items-end gap-10 md:grid-cols-[1.1fr_0.9fr] md:gap-16">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-sea">Approach</p>
+            <h2 class="mt-3 font-display text-3xl font-bold tracking-tight text-ink md:text-5xl">
+              Simple process. Durable results.
+            </h2>
+          </div>
+          <p class="text-base leading-relaxed text-ink/70 md:text-lg">
+            We listen first, define the essentials, then ship in clear stages. Every engagement prioritizes readability,
+            performance, and long-term ownership of your product.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="section-reveal px-6 py-24 md:px-8 md:py-32">
+        <div class="mx-auto max-w-6xl border-t border-line pt-16">
+          <h2 class="font-display text-3xl font-bold tracking-tight text-ink md:text-5xl">
+            Let’s build what’s next.
+          </h2>
+          <p class="mt-4 max-w-xl text-base leading-relaxed text-ink/70 md:text-lg">
+            Tell us about your software, website, or WordPress project. We’ll respond with a clear path forward.
+          </p>
+          <a
+            href="mailto:hello@arklogic.example"
+            class="mt-8 inline-flex items-center bg-ink px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-sea"
+          >
+            Email Ark Logic
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-line bg-ink px-6 py-12 text-white md:px-8">
+      <div class="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="font-display text-xl font-bold">Ark Logic LLC</p>
+          <p class="mt-3 max-w-sm text-sm leading-relaxed text-white/70">
+            Address: 8 The Green, STE R, Dover, DE 19901, USA
+          </p>
+        </div>
+        <p class="text-sm text-white/55">© 2026 Ark Logic LLC</p>
+      </div>
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.18 }
+      );
+
+      document.querySelectorAll(".section-reveal").forEach((section) => observer.observe(section));
+    </script>
+  </body>
+</html>
